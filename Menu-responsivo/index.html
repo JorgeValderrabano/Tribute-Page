@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Vertical Responsivo</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,9 +13,11 @@
         <div class="mobile">
             <div class="header">
                 <div class="logo">Logo</div>
-                <div class="more"><button>More</button></div>
+                <div class="more"><button id="bmore"><span class="material-icons">
+                    menu
+                    </span></button></div>
             </div>
-            <div class="links">
+            <div id="links" class="links collapser">
                 <a href="#">Services</a>
                 <a href="#">About</a>
                 <a href="#">Contact</a>
@@ -22,7 +26,6 @@
                 <a href="#">Login</a>
             </div>
         </div>
-        
         <div class="desktop">
             <div class="logo">Logo</div>
     
@@ -36,10 +39,9 @@
                 <a href="#">Search</a>
                 <a href="#">Sign Up</a>
                 <a href="#">Login</a>
-            </div>
-    
+            </div>  
             <div class="secondary mini">
-                <a href="#">More</a>
+                <a href="#" class="more">More</a>
                 <div class="submenu">
                     <a href="#">Search</a>
                     <a href="#">Sign Up</a>
@@ -48,5 +50,13 @@
             </div>
         </div>
     </nav>
+
+    <script>
+        const bmore = document.querySelector('#bmore');
+
+        bmore.addEventListener('click', e => {
+            links.classList.toggle('collapser')
+        });
+    </script>
 </body>
 </html>
